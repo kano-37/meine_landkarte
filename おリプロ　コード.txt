@@ -2,7 +2,14 @@ my_Map
 http://localhost:3000
 rails _6.1.5_ new mymap
 
+【書き換え】
+$ git add -A
+$ git commit -m "自由にわかりやすいメッセージ"
+$ git push origin main
+
 APIコード　AIzaSyBZzFYdRvyuWcv8HyJXn83Mx_jVkbDqRWU
+
+https://github.com/kano-37/meine_landkarte.git
 
 Rails.application.routes.draw do
   devise_for :users
