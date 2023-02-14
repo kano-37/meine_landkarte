@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   position: relative;
-  width: 1440px;
   height: 1024px;
   background: #C1AB96;
 
@@ -24,17 +23,18 @@
           .title{
             font-family: 'Sacramento', cursive;
             position: absolute;
-            width: 400px;
+            width: 600px;
             height: 100px;
-            left: 430px;
+            left: 310px;
             top: 60px;
             font-weight: 500;
-            font-size: 80px;
+            font-size: 96px;
             line-height: 110px;
             text-align: center;
           }
         }
       .field_area{
+        font-family: 'M PLUS Rounded 1c', sans-serif;
         width: 700px;
         height: 350px;
         padding: 40px 10px;
@@ -46,6 +46,8 @@
         .field{
           margin-bottom: 40px;
           .field_input{
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-weight: 400;
             border: 0;
             background-color: none;
             display: block;
@@ -69,11 +71,12 @@
         position: absolute;
         width: 720px;
         height: 350px;
-        background-color: #F5F1ED;
+        left: 5px;
+        background-color: none;
         margin: auto;
         .actions{
           border: 0;
-          background-color: none;
+          background-color: #F5F1ED;
           display: block;
           margin: 30px auto;
           border: 2px solid #c1ab96;
@@ -87,9 +90,8 @@
           text-align: center;
           cursor: pointer;
           .submit_button{
-            height: 30px;
-            font-size: 24px;
-            line-height: 50px;
+            font-size: 36px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
             background-color:transparent;
             border:transparent;
             text-align: center;

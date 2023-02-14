@@ -6,7 +6,8 @@
   <% @pin.tags.each do |tag| %>
     <span><%= tag.name %></span>
 <% end %>
-  <%= link_to "編集する", edit_pin_path(@pin.id) %>
+  <br><%= link_to "編集する", edit_pin_path(@pin.id) %>
+  <%= button_to "削除する", pin_path(@pin.id), method: :delete %>
 </div>
 
 <%= link_to "Pin一覧に戻る", pins_path %>

@@ -1,6 +1,6 @@
 <div class="home">
   <div class="home_box">
-     <br><h3>Search Pin</h3>
+     <div class="title">HOME</div>
      <div class="list_box">
        <%= form_tag({controller:"pins",action:"index"}, method: :get) do %>
          <%= text_field_tag :search %>
@@ -10,17 +10,15 @@
        <%= submit_tag 'Search', class: "search" %>
        <% end %>
      </div>
-  
-    <div class="pins_box">  
+      
+   <div class="pins-back">
       <div class="pins-container">
        <% @pins.each do |t| %>
         <div class="pins">
           <%= image_tag t.image_url, size: "250x200" if t.image? %>
-          <%= t.name %>
-          <%= t.about %>
-          <%= link_to "詳細へ", pin_path(t.id) %>
-          <%= link_to "編集する", edit_pin_path(t.id) %>
-          <%= button_to "削除する", pin_path(t.id), method: :delete %>
+          <p><%= t.name %><p>
+          <p><%= t.about %><p>
+          <p><%= link_to "詳細へ", pin_path(t.id) %><p>
         </div>
        <% end %>
       </div>
