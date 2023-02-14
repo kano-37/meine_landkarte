@@ -1,0 +1,592 @@
+my_Map
+http://localhost:3000
+rails _6.1.5_ new mymap
+
+APIコード　AIzaSyBZzFYdRvyuWcv8HyJXn83Mx_jVkbDqRWU
+
+Rails.application.routes.draw do
+  devise_for :users
+  resources :users, only: [:show]
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :pins, only: [:index]
+  
+  root 'hello#index'
+end
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+     <%= render "users/shared/error_messages", resource: resource %>
+
+
+new.html.erb(sessions)form_for　url: registration_path→user_session_path
+
+
+【css関連コード】
+
+width: 596px;
+          height: 63px;
+          background-color: white;
+          border: 0px none;
+
+          font-size: 24px;
+          line-height: 63px;
+
+
+
+    .title_area {
+      width: 880px;
+      height: 140px;
+      padding-top: 60px;
+
+      .title{
+        width: 670px;
+        height: 80px;
+        margin: auto;
+
+        font-size: 36px;
+        line-height: 80px;
+        text-align: center;
+      }
+
+.actions_area {
+        width: 880px;
+        height: 200px;
+        background-color: #F5F1ED;
+        margin: auto;
+
+        .actions {
+            width: 450px;
+            height: 50px;
+            font-size: 80px;
+            line-height: 71px;
+            text-align: center;
+            background-color: aqua;
+        }
+    }
+
+
+ <% if devise_mapping.rememberable? %>
+         <div class="field">
+           <%= f.check_box :remember_me %>
+         </div>
+       <% end %>
+→消した　sessions new.html
+
+
+
+
+ <div class="form-footer">
+    <p><a href="#">Create an account</a></p>
+    <p><a href="#">Forgot password?</a></p>
+  </div>
+</div>
+
+.form-footer {
+  font-size: 1em;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.form-footer a {
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+}
+
+.form-footer a:hover {
+  border-bottom: 1px dotted #8c8c8c;
+}
+
+
+◆signup before
+
+<div class="sign_up">
+<div class="title">Sign up</div>
+ <div class="sign_up_box">
+    <div class="field_area">
+
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+     <%= render "users/shared/error_messages", resource: resource %>
+ 
+     <div class="field">
+       <%= f.text_field :name, autofocus: true, autocomplete: "username", class: "field_input", :placeholder =>"user_name..." %>
+     </div>
+
+     <div class="field">
+       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field_input", :placeholder =>"email..." %>
+     </div>
+
+     <div class="field">
+       <% if @minimum_password_length %>
+       <%= f.password_field :password, autocomplete: "new-password",class: "field_input", :placeholder =>"password..." %>
+     </div>
+
+     <div class="field">
+       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field_input", :placeholder =>"password_checking..." %>
+     </div>
+     <% end %>
+    </div>
+
+    <div class="actions_area">
+     <div class="actions_text">
+       <%= f.submit "Sign up" %>
+     </div>
+     <% end %>
+    </div>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>
+
+.sign_up {
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #C1AB96;
+
+  .title{
+    width: 670px;
+    height: 80px;
+    margin: auto;
+    font-family: 'Geostar';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 110px;
+    text-align: center;
+  }
+
+  .sign_up_box {
+    position: absolute;
+    width: 1202px;
+    height: 804px;
+    left: calc(50% - 1202px/2);
+    top: calc(50% - 804px/2 + 80px);
+    background: #F5F1ED;
+    }
+    .field_area {
+      width: 600px;
+      height: 372px;
+      background-color: #F5F1ED;
+      margin: auto;
+
+      .field{
+        margin-top: 65px;
+        margin-bottom: 40px;
+        .field_input{
+          width: 600px;
+          height: 100px;
+          border: 0px none;
+          font-family: 'Geo';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 36px;
+          line-height: 100px;
+          background-color: #F4E0C4;
+          text-align: center;
+       }
+      }
+    }
+    .actions_area {
+      position: absolute;
+      width: 356px;
+      left: 420px;
+      bottom: 80px;
+
+     .actions_text {
+       font-family: "Geo";
+       font-style: normal;
+       font-weight: 500;
+       font-size: 64px;
+       line-height: 70px;
+       color: black;
+       text-decoration: none;
+       text-align: center;
+      }
+    }
+  }
+
+ .share_text {
+  width: 100%;
+  bottom: 10px;
+  text-align: center;
+  margin-top: 120px;
+  position: absolute;
+  background-color: #F5F1ED;
+
+  .share_text {
+  font-size: 15px;
+  line-height: 10px;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+   }
+ }
+
+
+
+
+◆new pin before
+
+ <div class="field">
+      <%= f.label :店名 %>
+      <%= f.text_field :name, :size => 30 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :住所 %>
+      <%= f.text_field :shopaddress, :size => 30 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :URL %>
+      <%= f.text_field :url, :size => 30 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :コメント  %>
+      <%= f.text_area :about, :size => "30x2" %>
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>
+
+  <div class='form-group'>
+      <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+          <div class='form-check'>
+              <%= tag.label class: 'form-check-label' do %>
+                  <%= tag.check_box class: 'form-check-input' %>
+                  <%= tag.text %>
+              <% end %>
+          </div>
+      <% end %>
+  </div>
+
+    <div class="actions">
+      <%= f.text_field :lat,:value =>"緯度", id: :lat %>
+      <%= f.text_field :lng,:value =>"経度", id: :lng %>
+      </div>
+  
+<h2>Map</h2>
+
+ <input id="address" type="textbox" placeholder="駅名・建物名">
+ <input type="button" value="検索" onclick="codeAddress()">
+ <p>最寄り駅や建物名を入れて検索してください<p>
+ <div id='map'></div>
+
+ <style>
+ #map {
+   height: 600px;
+   width: 600px;
+ }
+ </style>
+
+ <script>
+ //初期マップの設定
+ let map
+ let marker
+ function initMap(){
+   geocoder = new google.maps.Geocoder()
+
+   map = new google.maps.Map(document.getElementById('map'), {
+     center:  {lat: 35.6803997, lng:139.7690174},  //東京
+     zoom: 15,
+    
+   });
+ }
+
+ //検索後のマップ作成
+ let geocoder
+ let aft
+ function codeAddress(){
+   let inputAddress = document.getElementById('address').value;
+   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+     if (status == 'OK') {
+         //マーカーが複数できないようにする
+         if (aft == true){
+             marker.setMap(null);
+         }
+
+         //新しくマーカーを作成する
+         map.setCenter(results[0].geometry.location);
+             marker = new google.maps.Marker({
+             map: map,
+             position: results[0].geometry.location,
+             draggable: true // ドラッグ可能にする
+         });
+
+         //二度目以降か判断
+         aft = true
+
+         //検索した時に緯度経度を入力する
+         document.getElementById('lat').value = results[0].geometry.location.lat();
+         document.getElementById('lng').value = results[0].geometry.location.lng();
+
+         // マーカーのドロップ（ドラッグ終了）時のイベント
+         google.maps.event.addListener( marker, 'dragend', function(ev){
+             // イベントの引数evの、プロパティ.latLngが緯度経度
+             document.getElementById('lat').value = ev.latLng.lat();
+             document.getElementById('lng').value = ev.latLng.lng();
+         });
+     } else {
+       alert('該当する結果がありませんでした：' + status);
+     }
+   });   
+ }
+
+ </script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZzFYdRvyuWcv8HyJXn83Mx_jVkbDqRWU&callback=initMap" async defer></script>
+
+ <%= f.submit %>
+ <% end %>
+ <%= link_to "一覧に戻る", pins_path %>
+</form>
+
+
+
+◆toppage scss
+
+body {
+    background-color: #c1ab69;
+}
+
+form p{
+    border-bottom: 2px solid #000;
+    font-size: 96px;
+}
+
+form input[type="checkbox"], form input[type="submit"] {
+    background: none;
+    
+}
+
+form {
+  position: absolute;
+  width: 1390px;
+  height: 1150px;
+  left: 25px;
+  top: 735px;
+  background: rgba(250, 197, 89, 0.8);
+  text-align: center;
+}
+
+◆newpin コード
+body {
+  background-color: #C1AB96;
+}
+
+body p{
+    font-size: 96px;
+}
+
+form { 
+  position: absolute;
+  width: 1367px;
+  height: 1438px;
+  left: 37px;
+  top: 173px;
+  background: rgba(250, 197, 89, 0.8);
+  text-align: center;
+}
+
+form input[type="text"],form input[type="text"],form input[type="url"],form input[type="text"],form input[type="file"] {
+  border: 0;
+  background: #f5f1ed;
+  display: block;
+  margin: 10px auto;
+  border: 2px solid #f5f1ed;
+  padding: 15px 10px;
+  width: 660px;
+  height: 50px;
+  text-align: center;
+}
+
+form input[type="checkbox"] {
+    border: 0px;
+    background: none;
+    width: 600px;
+    text-align: center;
+}
+
+form input[type="submit"] {
+    background-color: #f5f1ed;
+    margin: 10px auto;
+    border: 2px solid #f5f1ed;
+    padding: 15px 10px;
+    position: absolute;
+    width: 230px;
+    height: 60px;
+    left: 65px;
+    top: 1460px;
+    text-align: center;
+}
+
+
+
+◆login.scss
+body {
+  background-color: #c1ab96;
+}
+
+form {
+  width: 1000px;
+  height: 500px;
+  padding: 40px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+form h1,form p {
+  color: black;
+  font-family: 'Geostar';
+  font-weight: 500;
+}
+
+form p {
+  font-size: 96px;
+}
+
+form input[type = "email"],form input[type = "password"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 10px auto;
+  border: 2px solid #c1ab96;
+  padding: 15px 10px;
+  width: 350px;
+  outline: none;
+  border-radius: 30px;
+  transition: 0.25s;
+  font-size: 20px;
+  text-align: center;
+}
+
+form input[type = "email"],form input[type = "password"]:focus {
+  width: 350px;
+  background-color: #f4e0c4;
+}
+
+form input[type = "submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 45px auto;
+  border: 2px solid #c1ab96;
+  padding: 15px 10px;
+  width: 350px;
+  outline: none;
+  border-radius: 30px;
+  transition: 0.25s;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+form input[type = "submit"]:hover {
+  background-color: #c1ab96;
+  border: 2px solid #c1ab96;
+}
+
+
+◆signup 
+form {
+  width: 1000px;
+  height: 600px;
+  padding: 40px 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+form h1,form p {
+  color: black;
+  font-size: 60px;
+  font-weight: 500;
+}
+
+form input[type="id"],form input[type="email"],form input[type="password"],form input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 10px auto;
+  border: 2px solid #c1ab96;
+  padding: 15px 10px;
+  width: 350px;
+  outline: none;
+  border-radius: 30px;
+  transition: 0.25s;
+  font-size: 20px;
+  text-align: center;
+}
+
+form input[type="id"]:focus,form input[type="email"]:focus,input[type="password"]:focus,form input[type="password"]:focus {
+  width: 420px;
+  background-color: #f4e0c4;
+}
+
+form input[type = "submit"]{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 45px auto;
+  border: 2px solid #c1ab96;
+  padding: 15px 10px;
+  width: 350px;
+  outline: none;
+  color: #fac559;
+  border-radius: 30px;
+  transition: 0.25s;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+form input[type = "submit"]:hover {
+  background-color: #c1ab96;
+  border: 2px solid #c1ab96;
+}
+*/
+
+
+ヘッダー
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mymap</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+  <h1>Mymap</h1>
+  <div class="header-list">
+   <ul>
+    <% if user_signed_in? %>
+     <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+     <li><%= link_to "新規登録", new_user_registration_path %></li>
+     <li><%= link_to "ログイン", new_user_session_path %></li>
+    <% end %>
+   </ul>
+  </div>
+ </header>
+ <main>
+  <%= yield %>
+ </main>
+  </body>
+</html>
+
+
+消した
+<a href="#">SIGN_UP</a>

@@ -1,0 +1,42 @@
+.home {
+    background-color: #c1ab96;
+
+    .home_box{
+        background-color: none;
+        width: 100%;
+        margin: 0px 30px;
+
+        .list_box{
+            background-color: none;
+            .search{
+                background-color: #f5f1ed;
+                border-color: #f5f1ed;
+                display: block;
+                font-size: 15px;
+                padding: 5px;
+                margin-top: 5px;
+            }
+        }
+        .pins_box{
+            background: #FAC559CC;
+            width: 1390px;
+            padding: 15px;
+            margin-top: 10px;
+          .pins-container{
+            display:flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            align-content: flex-start;
+            width: 90%;
+          }
+          .pins{
+            width: 33%;
+          }
+
+          .map_back{
+            background-color: none;
+            margin: 15px;
+          }
+        }
+    }
+}

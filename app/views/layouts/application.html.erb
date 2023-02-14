@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meine Landkarte</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <div class="hamburger-menu">
+      <input type="checkbox" id="menu-btn-check">
+      <label for="menu-btn-check" class="menu-btn"><span></span></label>
+      <div class="menu-content">
+        <ul>
+            <li>
+              <%= link_to "SIGN_UP", new_user_registration_path %>
+            </li>
+            <li>
+              <%= link_to "LOGIN", new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to "LOGOUT", destroy_user_session_path %>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <h1>Meine Landkarte</h1>
+      <h3>－行きたいお店を"PIN"して自分だけの地図を作ろう－</h3>
+      <div class="header-list">
+      <ul>
+        <li><%= link_to "home", pins_path %></li>
+        <li><%= link_to "new_pin",new_pin_path %></li>
+      </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

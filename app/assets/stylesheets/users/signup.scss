@@ -1,0 +1,126 @@
+.sign_up {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #C1AB96;
+
+  .sign_up_box{
+    width: 1200px;
+    height: 800px;
+    padding: 40px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #F5F1ED;
+    text-align: center;
+
+    .titlearea{
+      background-color: none;
+      width: 100%;
+
+      .title{
+        font-family: 'Sacramento', cursive;
+        margin: auto;
+        width: 600px;
+        height: 100px;
+        left: 430px;
+        top: 60px;
+        font-weight: 500;
+        font-size: 96px;
+        line-height: 110px;
+        text-align: center;
+      }
+    }
+
+    .field_area {
+      width: 700px;
+      height: 350px;
+      padding: 40px 10px;
+      position: absolute;
+      top: 20%;
+      left: 22%;
+      background-color: #F5F1ED;
+
+      .field{
+        margin-bottom: 10px;
+        .field_input{
+          border: 0;
+          background-color: none;
+          display: block;
+          margin: 10px auto;
+          border: 2px solid #C1AB96;
+          padding: 15px 10px;
+          width: 350px;
+          outline: none;
+          border-radius: 30px;
+          transition: 0.25s;
+          font-size: 30px;    
+          text-align: center;
+        }
+        .field_input:focus {
+          width: 420px;
+          background-color: #f4e0c4;
+        }
+       }
+      }
+
+    .actions_area {
+      position: absolute;
+      width: 1220px;
+      height: 146px;
+      left: 0px;
+      top: 600px;
+      background-color: #F5F1ED;
+
+     .actions {
+        border: 0;
+        background-color: none;
+        display: block;
+        margin: 30px auto;
+        border: 2px solid #c1ab96;
+        padding: 15px 10px;
+        width: 350px;
+        height: 50px;
+        outline: none;
+        border-radius: 30px;
+        transition: 0.25s;
+        text-align: center;
+        cursor: pointer;
+       .actions_button {
+          height: 40px;
+          left: 10px;
+          background-color: none;
+          font-size: 24px;
+          line-height: 50px;
+          background-color:transparent;
+          border:transparent;
+          text-align: center;
+        }
+      }
+      .actions:hover{
+        background-color: #c1ab96;
+        border: 2px solid #c1ab96;
+      }
+    }
+
+    .share_text {
+      width: 100%;
+      left: 0px;
+      text-align: center;
+      margin: auto;
+      position: absolute;
+      background-color: #F5F1ED;
+
+      .share_text {
+      font-size: 15px;
+      line-height: 10px;
+      color: black;
+      text-decoration: none;
+      text-align: center;
+      }
+    }
+  }
+}

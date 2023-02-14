@@ -1,0 +1,104 @@
+.Log_in {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  background: #C1AB96;
+
+   .log_in_box{
+      width: 1200px;
+      height: 800px;
+      padding: 40px 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: #F5F1ED;
+      text-align: center;
+    
+      .title_area{
+          background-color: none;
+          width: 100%;
+
+          .title{
+            font-family: 'Sacramento', cursive;
+            position: absolute;
+            width: 400px;
+            height: 100px;
+            left: 430px;
+            top: 60px;
+            font-weight: 500;
+            font-size: 80px;
+            line-height: 110px;
+            text-align: center;
+          }
+        }
+      .field_area{
+        width: 700px;
+        height: 350px;
+        padding: 40px 10px;
+        position: absolute;
+        top: 22%;
+        left: 22%;
+        background-color: #F5F1ED;
+
+        .field{
+          margin-bottom: 40px;
+          .field_input{
+            border: 0;
+            background-color: none;
+            display: block;
+            margin: 10px auto;
+            border: 2px solid #C1AB96;
+            padding: 15px 10px;
+            width: 350px;
+            outline: none;
+            border-radius: 30px;
+            transition: 0.25s;
+            font-size: 30px;    
+            text-align: center;
+          }
+          .field_input:focus {
+            width: 420px;
+            background-color: #f4e0c4;
+          }
+        }
+      }
+      .submit{
+        position: absolute;
+        width: 720px;
+        height: 350px;
+        background-color: #F5F1ED;
+        margin: auto;
+        .actions{
+          border: 0;
+          background-color: none;
+          display: block;
+          margin: 30px auto;
+          border: 2px solid #c1ab96;
+          padding: 15px 10px;
+          width: 350px;
+          height: 50px;
+          outline: none;
+          border-radius: 30px;
+          transition: 0.25s;
+          font-size: 24px;
+          text-align: center;
+          cursor: pointer;
+          .submit_button{
+            height: 30px;
+            font-size: 24px;
+            line-height: 50px;
+            background-color:transparent;
+            border:transparent;
+            text-align: center;
+          }
+        }
+          .actions:hover{
+            background-color: #c1ab96;
+            border: 2px solid #c1ab96;
+          }
+      }
+  }
+}

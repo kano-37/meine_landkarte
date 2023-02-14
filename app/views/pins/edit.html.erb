@@ -1,0 +1,11 @@
+<%= form_for @pin do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 90 %>
+    <%= f.label :address %>
+    <%= f.text_field :address, :size => 90 %>
+    <%= f.label :url %>
+    <%= f.text_field :url, :size => 100 %>
+    <%= f.label :about %>
+    <%= f.text_area :about, :size => 90 %> 
+    <%= f.submit "編集する" %>
+  <% end %>

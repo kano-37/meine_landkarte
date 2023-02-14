@@ -1,0 +1,39 @@
+<div class="sign_up">
+  <div class="sign_up_box">
+    <div class="titlearea">
+      <div class="title">Sign up</div>
+    </div>
+    <div class="field_area">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+  
+      <div class="field">
+      <%= f.text_field :name, autofocus: true, autocomplete: "username", class: "field_input", :placeholder =>"user_name..." %>
+      </div>
+
+      <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field_input", :placeholder =>"email..." %>
+      </div>
+
+      <div class="field">
+        <% if @minimum_password_length %>
+        <%= f.password_field :password, autocomplete: "new-password",class: "field_input", :placeholder =>"password..." %>
+        </div>
+        <% end %>
+
+      <div class="field">
+       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field_input", :placeholder =>"password_checking..." %>
+      </div>
+    </div>
+
+    <div class="actions_area">
+      <div class="actions">
+        <%= f.submit "Sign up", class: "actions_button", :placeholder=>"SIGN_UP..." %>
+      </div>
+      <% end %>
+    <div>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>
