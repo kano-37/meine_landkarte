@@ -8,7 +8,7 @@ git commit -m "自由にわかりやすいメッセージ"
 git push origin main
 
 git add -A
-git commit -m "ログイン画面の変更とflexbox"
+git commit -m "ログインのリンク削除"
 git push origin main
 
 APIコード　AIzaSyBZzFYdRvyuWcv8HyJXn83Mx_jVkbDqRWU
@@ -355,32 +355,6 @@ width: 596px;
 
 
 
-◆toppage scss
-
-body {
-    background-color: #c1ab69;
-}
-
-form p{
-    border-bottom: 2px solid #000;
-    font-size: 96px;
-}
-
-form input[type="checkbox"], form input[type="submit"] {
-    background: none;
-    
-}
-
-form {
-  position: absolute;
-  width: 1390px;
-  height: 1150px;
-  left: 25px;
-  top: 735px;
-  background: rgba(250, 197, 89, 0.8);
-  text-align: center;
-}
-
 ◆newpin コード
 body {
   background-color: #C1AB96;
@@ -432,140 +406,6 @@ form input[type="submit"] {
     text-align: center;
 }
 
-
-
-◆login.scss
-body {
-  background-color: #c1ab96;
-}
-
-form {
-  width: 1000px;
-  height: 500px;
-  padding: 40px 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background-color: #f0f8ff;
-  text-align: center;
-}
-
-form h1,form p {
-  color: black;
-  font-family: 'Geostar';
-  font-weight: 500;
-}
-
-form p {
-  font-size: 96px;
-}
-
-form input[type = "email"],form input[type = "password"]{
-  border: 0;
-  background: none;
-  display: block;
-  margin: 10px auto;
-  border: 2px solid #c1ab96;
-  padding: 15px 10px;
-  width: 350px;
-  outline: none;
-  border-radius: 30px;
-  transition: 0.25s;
-  font-size: 20px;
-  text-align: center;
-}
-
-form input[type = "email"],form input[type = "password"]:focus {
-  width: 350px;
-  background-color: #f4e0c4;
-}
-
-form input[type = "submit"]{
-  border: 0;
-  background: none;
-  display: block;
-  margin: 45px auto;
-  border: 2px solid #c1ab96;
-  padding: 15px 10px;
-  width: 350px;
-  outline: none;
-  border-radius: 30px;
-  transition: 0.25s;
-  font-size: 24px;
-  text-align: center;
-  cursor: pointer;
-}
-
-form input[type = "submit"]:hover {
-  background-color: #c1ab96;
-  border: 2px solid #c1ab96;
-}
-
-
-◆signup 
-form {
-  width: 1000px;
-  height: 600px;
-  padding: 40px 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background-color: #f0f8ff;
-  text-align: center;
-}
-
-form h1,form p {
-  color: black;
-  font-size: 60px;
-  font-weight: 500;
-}
-
-form input[type="id"],form input[type="email"],form input[type="password"],form input[type="password"] {
-  border: 0;
-  background: none;
-  display: block;
-  margin: 10px auto;
-  border: 2px solid #c1ab96;
-  padding: 15px 10px;
-  width: 350px;
-  outline: none;
-  border-radius: 30px;
-  transition: 0.25s;
-  font-size: 20px;
-  text-align: center;
-}
-
-form input[type="id"]:focus,form input[type="email"]:focus,input[type="password"]:focus,form input[type="password"]:focus {
-  width: 420px;
-  background-color: #f4e0c4;
-}
-
-form input[type = "submit"]{
-  border: 0;
-  background: none;
-  display: block;
-  margin: 45px auto;
-  border: 2px solid #c1ab96;
-  padding: 15px 10px;
-  width: 350px;
-  outline: none;
-  color: #fac559;
-  border-radius: 30px;
-  transition: 0.25s;
-  font-size: 24px;
-  text-align: center;
-  cursor: pointer;
-}
-
-form input[type = "submit"]:hover {
-  background-color: #c1ab96;
-  border: 2px solid #c1ab96;
-}
-*/
-
-
 ヘッダー
 <!DOCTYPE html>
 <html>
@@ -600,6 +440,15 @@ form input[type = "submit"]:hover {
 
 
 消した
-<a href="#">SIGN_UP</a>
 
-<%= link_to "Already a member?", new_session_path(resource_name) , class: "share_text" %><br />
+<%- if controller_name != 'sessions' %>
+<div class="share"></div>
+  <%= link_to "Already a member?", new_session_path(resource_name) , class: "share_text" %><br />
+</div>
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+<% end %>   shared/links.html
+
+<%= render "users/shared/links" %>  shared/unlocks/new.html
