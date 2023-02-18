@@ -1,5 +1,10 @@
 .Newpin{
-    background-color: #c1ab96;
+  background-size: 100% auto;
+  background-color: #c1ab96;
+  display: flex;
+  align-items: center;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+
 
     .newpin_box{
         background-color: none;
@@ -8,29 +13,48 @@
          font-family: 'Sacramento', cursive;
          left: 600px;
          display: flex;
-         margin: auto;
-         color: white;
-         font-size: 30px;
-         font-weight: 500;
+         padding-top: 15px;
+         padding-left: 20px;
+         color: black;
+         font-size: 40px;
+         font-weight: 600;
          text-align: center;
         }
 
       .field_area{
-         background: #FAC559CC;
-         width: 1390px;
-         padding: 15px;
-         margin-top: 10px;
+        width: 1390px;
+        background: #FAC559CC;
+        margin-left: 15px;
+        margin-top: 15px; 
+        padding: 15px;
 
          .field{
             background-color: none;
+            font-size: 20px;
 
             .field_input{
               margin: 5px;
-              width: 650px;
+              width: 698px;
               height: 30px;
-              left: 20px;
+              margin-left: 40px;
               top: 200px;
               background-color: none;
+            }
+            .url_input{
+              width: 698px;
+              height: 30px;
+              margin-top: 10px;
+              margin-left: 51px;
+            }
+            .about_input{
+              width: 684px;
+              height: 100px;
+              margin-top: 10px;
+              padding: 8px;
+            }
+            .image_input{
+              margin-top: 20px;
+              margin-bottom: 15px;
             }
          }
       }
@@ -38,7 +62,39 @@
       .map_box{
         background: #FAC559CC;
         width: 1390px;
-        padding: 15px;
+        margin-left: 15px;
+        padding: 10px 15px;
+        padding-bottom: 70px;
+        .actions{
+          color: #FAC559CC;
+          display: none;
+        }
+        .map_input{
+        width: 500px;
+        height: 30px;
+        }
+        .search_input{
+          height: 35px;
+          width: 80px;
+        }
+      }
+    .button{
+      position: absolute;
+      width: 150px;
+      height: 10px;
+      background-color: #F5F1ED;
+      margin-top: 10px;
+      padding-bottom: 30px;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 10px;
+      .submit_button{
+        font-size: 20px;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        background-color:transparent;
+        border:transparent;
+        text-align: center;
       }
     }
+  }
 }

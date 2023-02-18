@@ -1,13 +1,15 @@
 <h1>MyMap</h1>
-<h3>投稿詳細</h3>
+<h3>投稿詳細</h3><br>
 <div class="pin">
-  <p><%= @pin.name %></p>
-  <p><%= @pin.created_at %></p>
+  <p><%= @pin.name %></p><br>
+  <p><%= @pin.url %></p><br>
+  <p><%= @pin.about %></p><br>
+  <p><%= @pin.created_at %></p><br>
   <% @pin.tags.each do |tag| %>
     <span><%= tag.name %></span>
-<% end %>
+<% end %><br>
   <br><%= link_to "編集する", edit_pin_path(@pin.id) %>
-  <%= button_to "削除する", pin_path(@pin.id), method: :delete %>
+  <%= button_to "削除する", pin_path(@pin.id), method: :delete %><br>
 </div>
 
 <%= link_to "Pin一覧に戻る", pins_path %>

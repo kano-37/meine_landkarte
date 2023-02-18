@@ -1,14 +1,19 @@
+<link href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" rel="stylesheet">
 <div class="home">
   <div class="home_box">
      <div class="title">HOME</div>
      <div class="list_box">
-       <%= form_tag({controller:"pins",action:"index"}, method: :get) do %>
-         <%= text_field_tag :search %>
+        <div class="search-box">
+        <%= form_tag({controller:"pins",action:"index"}, method: :get) do %>
          <% Tag.all.each do |t| %>
          <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
-       <% end %>
-       <%= submit_tag 'Search', class: "search" %>
-       <% end %>
+         <% end %>
+         <input type="text" placeholder="検索ワードorタグ検索">
+         <button type="submit">
+             <i class="fas fa-search fa-fw"></i>
+         </button>
+         <% end %>
+       </div>
      </div>
       
    <div class="pins-back">

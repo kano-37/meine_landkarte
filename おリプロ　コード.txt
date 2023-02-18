@@ -8,21 +8,44 @@ git commit -m "自由にわかりやすいメッセージ"
 git push origin main
 
 git add -A
-git commit -m "ログインのリンク削除"
+git commit -m "ログイン画面の変更"
 git push origin main
 
 APIコード　AIzaSyBZzFYdRvyuWcv8HyJXn83Mx_jVkbDqRWU
 
 https://github.com/kano-37/meine_landkarte.git
 
-Rails.application.routes.draw do
-  devise_for :users
-  resources :users, only: [:show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :pins, only: [:index]
-  
-  root 'hello#index'
-end
+
+$ rails g model Pin カラム名:データ型 カラム名:データ型 ...
+
+
+      <div class="btn-group btn-group-vertical" data-toggle="buttons">
+        <label class="btn active">
+          <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> レストラン</span>
+        </label>
+        <label class="btn">
+          <input type="checkbox" name='email2'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> カフェ</span>
+        </label>
+        <label class="btn">
+          <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Account Email</span>
+        </label>
+      </div>
+
+
+
+pins_controller.rb 冒頭
+def index
+      @pins = Pin.all
+    search = params[:search]
+    @pins = @pins.joins(:user).where("body LIKE ?", "%#{search}%") if search.present?
+    if params[:tag_ids]
+      @pins = []
+      params[:tag_ids].each do |key, value|      
+        @pins += Tag.find_by(name: key).pins if value == "1"
+      end
+      @pins.uniq!
+    end
+  end
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
      <%= render "users/shared/error_messages", resource: resource %>
@@ -83,29 +106,6 @@ width: 596px;
 →消した　sessions new.html
 
 
-
-
- <div class="form-footer">
-    <p><a href="#">Create an account</a></p>
-    <p><a href="#">Forgot password?</a></p>
-  </div>
-</div>
-
-.form-footer {
-  font-size: 1em;
-  padding: 2em 0;
-  text-align: center;
-}
-
-.form-footer a {
-  color: #8c8c8c;
-  text-decoration: none;
-  transition: border-color 0.3s;
-}
-
-.form-footer a:hover {
-  border-bottom: 1px dotted #8c8c8c;
-}
 
 
 ◆signup before
