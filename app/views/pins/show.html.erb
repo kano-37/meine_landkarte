@@ -1,15 +1,35 @@
-<h1>MyMap</h1>
-<h3>投稿詳細</h3><br>
-<div class="pin">
-  <p><%= @pin.name %></p><br>
-  <p><%= @pin.url %></p><br>
-  <p><%= @pin.about %></p><br>
-  <p><%= @pin.created_at %></p><br>
-  <% @pin.tags.each do |tag| %>
-    <span><%= tag.name %></span>
-<% end %><br>
-  <br><%= link_to "編集する", edit_pin_path(@pin.id) %>
-  <%= button_to "削除する", pin_path(@pin.id), method: :delete %><br>
-</div>
+<div class="details">
+  <div class="title">Details</div><br>
+    <div class="pin">
+      
+      <%= form_for @pin do |f| %>
+      <div class="name">
+      <%= f.label :店名 %>
+      <p><%= @pin.name %></p><br>
+      </div>
+      
+      <div class="url">
+      <%= f.label :URL %>
+      <p><%= @pin.url %></p><br>
+      </div>
 
-<%= link_to "Pin一覧に戻る", pins_path %>
+      <div class="about">
+      <%= f.label :コメント %>
+      <p><%= @pin.about %></p><br>
+      </div>
+
+      <p><%= @pin.created_at %></p><br>
+      
+      <div class="tag">
+        <% @pin.tags.each do |tag| %>
+          <span><%= tag.name %></span>
+        <% end %><br>
+      </div>
+
+      <br><%= link_to "編集する", edit_pin_path(@pin.id) %><br>
+        <div class="button">
+        <%= button_to "削除する", pin_path(@pin.id), method: :delete, class: "delete" %><br>
+        </div>
+    </div>
+    <% end %>
+</div>

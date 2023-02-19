@@ -1,9 +1,23 @@
-<%= form_for @pin do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, :size => 90 %>
-    <%= f.label :url %>
-    <%= f.text_field :url, :size => 100 %>
-    <%= f.label :about %>
-    <%= f.text_area :about, :size => 90 %> 
-    <%= f.submit "編集する" %>
-  <% end %>
+<div class="edit"> 
+  <div class="title">Edit</div>
+  <%= form_for @pin do |f| %>
+    <div class="name">
+      <%= f.label :店名 %>
+      <%= f.text_field :name, class: "name_box" %>
+    </div>
+
+    <div class="url">
+      <%= f.label :URL %>
+      <%= f.text_field :url, class: "url_box" %><br>
+    </div>
+
+    <div class="about">
+      <%= f.label :コメント %>
+      <%= f.text_area :about, class: "about_box" %> <br>
+    </div>
+    
+    <div class="button">
+      <%= f.submit "編集する", class: "edit_button" %>
+      <% end %>
+    </div>
+</div>

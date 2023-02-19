@@ -1,0 +1,77 @@
+.edit{
+    background-color: #c1ab96;
+    width: 100%;
+    height: 1120px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    
+    .title{
+        background-color: none;
+        font-family: 'Sacramento', cursive;
+        left: 600px;
+        display: flex;
+        padding-top: 15px;
+        padding-left: 20px;
+        color: black;
+        font-size: 60px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .name{
+        width: 300px;
+        background-color: none;
+        margin-left: 30px;
+        font-size: 20px;
+        .name_box{
+            width: 700px;
+            height: 30px;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+    }
+    .url{
+        background-color: none;
+        margin-left: 30px;
+        margin-top: 20px;
+        width: 300px;
+        font-size: 20px;
+        .url_box{
+            width: 700px;
+            height: 30px;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+    }
+    .about{
+        width: 300px;
+        margin-left: 30px;
+        margin-top: 20px;
+        font-size: 20px;
+        .about_box{
+            width: 700px;
+            height: 90px;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+    }
+    .button{
+        position: absolute;
+        width: 150px;
+        height: 10px;
+        background-color: #F5F1ED;
+        margin-top: 10px;
+        margin-left: 30px;
+        padding-bottom: 30px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 10px;
+        .edit_button{
+            font-size: 20px;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color:transparent;
+            border:transparent;
+            text-align: center; 
+        }
+
+    }
+}
