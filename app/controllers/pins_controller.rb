@@ -2,15 +2,22 @@ class PinsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-      @pins = Pin.all
-    search = params[:search]
-    @pins = @pins.joins(:user).where("body LIKE ?", "%#{search}%") if search.present?
-    if params[:tag_ids]
-      @pins = []
-      params[:tag_ids].each do |key, value|      
-        @pins += Tag.find_by(name: key).pins if value == "1"
+    @pins= Pin.all
+    @tags = Tag.all
+    @pins = @pins.where("name LIKE ? ",'%' + params[:search] + '%') if params[:search].present?
+    #もしタグ検索したら、post_idsにタグを持ったidをまとめてそのidで検索
+    if params[:tag_ids].present?
+      pin_ids = []
+      params[:tag_ids].each do |key, value| 
+        if value == "1"
+          Tag.find_by(name: key).pins.each do |p| 
+            pin_ids << p.id
+          end
+        end
       end
-      @pins.uniq!
+      pin_ids = pin_ids.uniq
+      #キーワードとタグのAND検索
+      @pins = @pins.where(id: pin_ids) if pin_ids.present?
     end
   end
 
