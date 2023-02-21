@@ -2,13 +2,16 @@ my_Map
 http://localhost:3000
 rails _6.1.5_ new mymap
 
+belongs_to :user
+    mount_uploader :image, ImageUploader
+
 【書き換え】
 git add -A
 git commit -m "自由にわかりやすいメッセージ"
 git push origin main
 
 git add -A
-git commit -m "編集と詳細ページ"
+git commit -m "タグ検索"
 git push origin main
 
 APIコード　AIzaSyBZzFYdRvyuWcv8HyJXn83Mx_jVkbDqRWU
