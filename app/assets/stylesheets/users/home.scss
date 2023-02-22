@@ -39,12 +39,11 @@
               border-radius: 1.5rem 0 0 1.5rem;
           }
           #sbtn4{
+            cursor: pointer;
             height: 39px;
             width:50px;	
             position:absolute; 
-            left:210px; 
-            top: 271px;
-            background:#f5f1ed;
+            background:#7fbfff;
             color:#fff;
             border:none;
             border-radius:0 25px 25px 0;
@@ -56,7 +55,7 @@
             left:27%;	
             }
             #sbtn4:hover{
-            color: bisque;
+            color: #f5f1ed;
             }
         }
       .pins-back{
