@@ -22,6 +22,31 @@ https://github.com/kano-37/meine_landkarte.git
 $ rails g model Pin カラム名:データ型 カラム名:データ型 ...
 
 
+ <%= submit_tag '検索する'  %>
+
+css
+ .search-box button {
+              cursor: pointer;
+              padding: .8rem .9rem .8rem .8rem;
+              border-radius: 0 1.5rem 1.5rem 0;
+              border: none;
+              background-color: #333947;
+              color: #fff;
+              font-size: .75rem;
+          }
+          .search-box input:focus {
+              outline: 0;
+              border: 1px solid #4ab6f6;
+          }
+          .search-box button:hover {
+              color: #4ab6f6;
+          }
+
+
+
+
+
+
       <div class="btn-group btn-group-vertical" data-toggle="buttons">
         <label class="btn active">
           <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> レストラン</span>

@@ -8,10 +8,9 @@
          <% Tag.all.each do |t| %>
          <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
          <% end %>
-         <h3>投稿を検索</h3>
          <%= form_tag({controller:"pins",action:"index"}, method: :get) do %>
            <%= text_field_tag :search %>
-           <%= submit_tag '検索する'  %>
+           <button id="sbtn4" type="submit"><i class="fas fa-search"></i></button>
         <% end %>
 
          <% end %>
